@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Once upon a time"
+        }
+      ],
+      "max_tokens": 30,
+      "temperature": 0,
+      "add_generation_prompt": false
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 4342,
+    "ttft_ms": null,
+    "body": {
+      "id": "chatcmpl-897cfe974f29f0a3",
+      "object": "chat.completion",
+      "created": 1794800614,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "user",
+            "content": "thought\n...in a kingdom carved entirely from iridescent sea-glass, there lived a clockmaker named Elias who didn't build clocks to",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 10,
+        "total_tokens": 40,
+        "completion_tokens": 30,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

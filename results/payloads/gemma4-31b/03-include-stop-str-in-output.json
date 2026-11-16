@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "List 10 fruits, numbered 1. to 10."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0,
+      "stop": [
+        "4."
+      ],
+      "include_stop_str_in_output": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 2038,
+    "ttft_ms": 435,
+    "body": {
+      "id": "chatcmpl-9b016e28db83d613",
+      "object": "chat.completion",
+      "created": 1794800311,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "1. Apple\n2. Banana\n3. Orange\n4.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": "4.",
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 28,
+        "total_tokens": 42,
+        "completion_tokens": 14,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

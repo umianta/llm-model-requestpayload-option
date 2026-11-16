@@ -1,0 +1,132 @@
+[
+  {
+    "name": "image URL (default detail 280)",
+    "prompt_tokens": 287,
+    "ttft_ms_median": 458,
+    "ttft_ms_all": [
+      451,
+      458,
+      1004
+    ]
+  },
+  {
+    "name": "image base64 (data URL)",
+    "prompt_tokens": 280,
+    "ttft_ms_median": 229,
+    "ttft_ms_all": [
+      227,
+      229,
+      409
+    ]
+  },
+  {
+    "name": "image detail 70 (fastest)",
+    "prompt_tokens": 88,
+    "ttft_ms_median": 857,
+    "ttft_ms_all": [
+      751,
+      857,
+      1168
+    ]
+  },
+  {
+    "name": "image detail 1120 (most detail)",
+    "prompt_tokens": 1135,
+    "ttft_ms_median": 1000,
+    "ttft_ms_all": [
+      901,
+      1000,
+      2635
+    ]
+  },
+  {
+    "name": "image -> JSON (schema)",
+    "prompt_tokens": 280,
+    "ttft_ms_median": 355,
+    "ttft_ms_all": [
+      347,
+      355,
+      368
+    ]
+  },
+  {
+    "name": "two images, compare",
+    "prompt_tokens": 557,
+    "ttft_ms_median": 684,
+    "ttft_ms_all": [
+      582,
+      684,
+      1521
+    ]
+  },
+  {
+    "name": "video 8 frames (faster)",
+    "prompt_tokens": 623,
+    "ttft_ms_median": 568,
+    "ttft_ms_all": [
+      506,
+      568,
+      1017
+    ]
+  },
+  {
+    "name": "video 32 frames (more detail)",
+    "prompt_tokens": 2423,
+    "ttft_ms_median": 2102,
+    "ttft_ms_all": [
+      2055,
+      2102,
+      3207
+    ]
+  },
+  {
+    "name": "PDF as text (pdftotext)",
+    "prompt_tokens": 435,
+    "ttft_ms_median": 269,
+    "ttft_ms_all": [
+      268,
+      269,
+      273
+    ]
+  },
+  {
+    "name": "PDF page as image, detail 70 (too low)",
+    "prompt_tokens": 138,
+    "ttft_ms_median": 186,
+    "ttft_ms_all": [
+      185,
+      186,
+      253
+    ]
+  },
+  {
+    "name": "PDF page as image, detail 280 (default)",
+    "prompt_tokens": 341,
+    "ttft_ms_median": 245,
+    "ttft_ms_all": [
+      242,
+      245,
+      424
+    ]
+  },
+  {
+    "name": "PDF page as image, detail 1120 (OCR quality)",
+    "prompt_tokens": 1167,
+    "ttft_ms_median": 1443,
+    "ttft_ms_all": [
+      1154,
+      1443,
+      2224
+    ]
+  },
+  {
+    "name": "PDF text + page image together",
+    "prompt_tokens": 973,
+    "ttft_ms_median": 1239,
+    "ttft_ms_all": [
+      1230,
+      1239,
+      2451
+    ]
+  }
+]

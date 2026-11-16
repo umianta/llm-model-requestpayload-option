@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/detokenize",
+    "body": {
+      "model": "gemma-4-31b",
+      "tokens": [
+        2,
+        9259,
+        236764
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 2,
+    "ttft_ms": null,
+    "body": {
+      "prompt": "<bos>Hello,"
+    }
+  }
+}

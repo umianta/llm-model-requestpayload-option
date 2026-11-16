@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Can I return a broken item after 2 weeks?"
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0,
+      "documents": [
+        {
+          "title": "Returns policy",
+          "text": "Broken items can be returned within 30 days for a full refund."
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 18502,
+    "ttft_ms": 291,
+    "body": {
+      "id": "chatcmpl-8a216ad11b443789",
+      "object": "chat.completion",
+      "created": 1794800622,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Whether you can return a broken item after two weeks depends on **where you bought it**, **why it is broken**, and the **store's specific policy**.\n\nHere is a breakdown of your options based on the most common scenarios:\n\n### 1. If the item arrived broken or failed due to a defect (Manufacturer Defect)\nIf the item stopped working on its own or arrived damaged, you are usually protected regardless of the 14-day window.\n*   **Warranty:** Most electronics and appliances come with a 1-year manufacturer warranty. If it's a defect, the company should repair or",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 24,
+        "total_tokens": 152,
+        "completion_tokens": 128,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

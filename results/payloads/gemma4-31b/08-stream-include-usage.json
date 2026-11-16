@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain what a GPU is in two sentences."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true,
+        "continuous_usage_stats": false
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 7512,
+    "ttft_ms": null,
+    "body": [
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}",
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"A\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" GPU\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\",\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "... 47 more events ...",
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":106,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-b23989152367bd80\",\"object\":\"chat.completion.chunk\",\"created\":1794801102,\"model\":\"gemma-4-31b\",\"choices\":[],\"usage\":{\"prompt_tokens\":22,\"total_tokens\":73,\"completion_tokens\":51},\"system_fingerprint\":\"vllm-0.28.0-b98077e4\"}",
+      "data: [DONE]"
+    ]
+  }
+}

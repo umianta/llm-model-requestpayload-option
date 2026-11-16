@@ -1,0 +1,41 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "{{api_base}}/models"
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 5,
+    "ttft_ms": null,
+    "body": {
+      "object": "list",
+      "data": [
+        {
+          "id": "gemma-4-31b",
+          "object": "model",
+          "created": 1794801638,
+          "owned_by": "vllm",
+          "root": "RedHatAI/gemma-4-31B-it-FP8-dynamic",
+          "parent": null,
+          "max_model_len": 4096,
+          "permission": [
+            {
+              "id": "modelperm-b0ac2193ca68ea66",
+              "object": "model_permission",
+              "created": 1794801638,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

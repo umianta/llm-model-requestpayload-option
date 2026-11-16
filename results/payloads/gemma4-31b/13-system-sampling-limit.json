@@ -1,0 +1,71 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{api_base}}/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer in one sentence."
+        },
+        {
+          "role": "user",
+          "content": "Explain what a GPU is in two sentences."
+        }
+      ],
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_completion_tokens": 200,
+      "stop": [
+        "\n\n\n"
+      ],
+      "seed": 42
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 4761,
+    "ttft_ms": 297,
+    "body": {
+      "id": "chatcmpl-aee35489c856f0e6",
+      "object": "chat.completion",
+      "created": 1794801640,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "A GPU, or Graphics Processing Unit, is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images for output to a display.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 33,
+        "total_tokens": 66,
+        "completion_tokens": 33,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

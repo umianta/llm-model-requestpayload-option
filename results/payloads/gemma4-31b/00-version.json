@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "{{target}}/version"
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 0,
+    "ttft_ms": null,
+    "body": {
+      "version": "0.28.0"
+    }
+  }
+}

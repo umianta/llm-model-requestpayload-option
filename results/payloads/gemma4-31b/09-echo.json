@@ -1,0 +1,184 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ],
+      "max_tokens": 10,
+      "temperature": 0,
+      "echo": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 315,
+    "ttft_ms": 307,
+    "body": {
+      "id": "chatcmpl-b231ca434aabeb04",
+      "object": "chat.completion",
+      "created": 1794800614,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Paris",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 18,
+        "total_tokens": 20,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": [
+        null,
+        {
+          "105": {
+            "logprob": -21.563247680664062,
+            "rank": 52958,
+            "decoded_token": "<|turn>"
+          }
+        },
+        {
+          "2364": {
+            "logprob": -18.92852210998535,
+            "rank": 28779,
+            "decoded_token": "user"
+          }
+        },
+        {
+          "107": {
+            "logprob": -18.776277542114258,
+            "rank": 11264,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "818": {
+            "logprob": -16.538755416870117,
+            "rank": 43235,
+            "decoded_token": "The"
+          }
+        },
+        {
+          "5279": {
+            "logprob": -38.756126403808594,
+            "rank": 226490,
+            "decoded_token": " capital"
+          }
+        },
+        {
+          "529": {
+            "logprob": -21.223388671875,
+            "rank": 67186,
+            "decoded_token": " of"
+          }
+        },
+        {
+          "7001": {
+            "logprob": -12.814204216003418,
+            "rank": 6970,
+            "decoded_token": " France"
+          }
+        },
+        {
+          "563": {
+            "logprob": -8.983133316040039,
+            "rank": 127,
+            "decoded_token": " is"
+          }
+        },
+        {
+          "106": {
+            "logprob": -17.2504825592041,
+            "rank": 45002,
+            "decoded_token": "<turn|>"
+          }
+        },
+        {
+          "107": {
+            "logprob": -0.2715162932872772,
+            "rank": 1,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "105": {
+            "logprob": -28.84375,
+            "rank": 20382,
+            "decoded_token": "<|turn>"
+          }
+        },
+        {
+          "4368": {
+            "logprob": -18.610183715820312,
+            "rank": 2708,
+            "decoded_token": "model"
+          }
+        },
+        {
+          "107": {
+            "logprob": -10.000045776367188,
+            "rank": 2,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "100": {
+            "logprob": 0,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          }
+        },
+        {
+          "45518": {
+            "logprob": -0.0000040531076592742465,
+            "rank": 1,
+            "decoded_token": "thought"
+          }
+        },
+        {
+          "107": {
+            "logprob": 0,
+            "rank": 1,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "101": {
+            "logprob": -7.152555099310121e-7,
+            "rank": 1,
+            "decoded_token": "<channel|>"
+          }
+        }
+      ],
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

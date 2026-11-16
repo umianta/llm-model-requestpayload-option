@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Say hi."
+        }
+      ],
+      "max_tokens": 40,
+      "temperature": 0,
+      "chat_template": "{% for m in messages %}{{ m['role'] | upper }}: {{ m['content'] }}\n{% endfor %}ASSISTANT:"
+    }
+  },
+  "response": {
+    "status": 400,
+    "time_ms": 0,
+    "ttft_ms": null,
+    "body": {
+      "error": {
+        "message": "Chat template is passed with request, but --trust-request-chat-template is not set. Refused request with untrusted chat template.",
+        "type": "BadRequestError",
+        "param": null,
+        "code": 400
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Email: \"Hi, I am Priya Shah. My order #4471 arrived broken on 3 Nov 2026. The screen is cracked. Please call me at 555-0142.\"\nReturn JSON with name, order_id, date, problem. JSON only."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 8252,
+    "ttft_ms": 168,
+    "body": {
+      "id": "chatcmpl-8d408b4d9b0c7cf4",
+      "object": "chat.completion",
+      "created": 1794800383,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "```json\n{\n  \"name\": \"Priya Shah\",\n  \"order_id\": \"4471\",\n  \"date\": \"3 Nov 2026\",\n  \"problem\": \"The screen is cracked\"\n}\n```",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 78,
+        "total_tokens": 135,
+        "completion_tokens": 57,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

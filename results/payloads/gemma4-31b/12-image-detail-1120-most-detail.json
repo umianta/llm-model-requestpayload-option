@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "temperature": 0,
+      "max_tokens": 200,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "https://vllm-public-assets.s3.us-west-2.amazonaws.com/vision_model_images/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Describe this scene in detail, including any small objects far away."
+            }
+          ]
+        }
+      ],
+      "mm_processor_kwargs": {
+        "max_soft_tokens": 1120
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 29678,
+    "ttft_ms": 3229,
+    "body": {
+      "id": "chatcmpl-8a0258552f568629",
+      "object": "chat.completion",
+      "created": 1794800687,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "A wide-angle, high-saturation landscape photograph captures a serene natural scene under a vast, bright blue sky.\n\n**The Foreground and Midground:**\nA weathered wooden boardwalk, composed of light-gray horizontal planks, begins at the bottom center and leads the eye straight into the distance, curving slightly to the left as it recedes. The boardwalk is flanked on both sides by a lush, vibrant green meadow of tall, thick grass. The grass is illuminated by a warm, golden light, suggesting either early morning or late afternoon, creating highlights and deep shadows within the blades. To the right, the grass transitions into denser, shrubby vegetation with hints of orange and yellow foliage.\n\n**The Background:**\nIn the far distance, a horizontal line of diverse greenery marks the horizon. This includes several clusters of rounded, leafy green trees and smaller shrubs. On the far left, there is a larger, denser group of trees. Toward the center-right, a few isolated, thinner trees",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 1135,
+        "total_tokens": 1335,
+        "completion_tokens": 200,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

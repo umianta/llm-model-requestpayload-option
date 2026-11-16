@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a paragraph about the sea."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0.7,
+      "repetition_penalty": 1.15
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 18548,
+    "ttft_ms": 160,
+    "body": {
+      "id": "chatcmpl-9b829b3bfd36f5e0",
+      "object": "chat.completion",
+      "created": 1794800362,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The sea is a vast, rhythmic expanse of sapphire and turquoise that breathes with the pulse of the moon. Its surface acts as a shifting mirror, reflecting the golden hues of sunrise and the deep violets of twilight, while beneath the crashing white foam lies a silent, mysterious kingdom. From the gentle lap of waves against a sandy shore to the thunderous roar of a storm-tossed ocean, the water possesses an ancient energy that feels both soothing and formidable. It is a world of endless horizons and hidden depths, where shimmering schools of fish dart through coral forests and currents travel thousands of miles in a timeless dance of salt and spray.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 148,
+        "completion_tokens": 128,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

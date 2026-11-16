@@ -1,0 +1,82 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Translate to French: The cat sleeps on the warm sofa."
+        }
+      ],
+      "max_tokens": 40,
+      "use_beam_search": true,
+      "n": 2,
+      "length_penalty": 1,
+      "temperature": 0
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 7594,
+    "ttft_ms": null,
+    "body": {
+      "id": "chatcmpl-bc852d1c83066f6b",
+      "object": "chat.completion",
+      "created": 1794800272,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Le chat dort sur le canapé chaud.<turn|><turn|>-\n",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 1,
+          "token_ids": null,
+          "routed_experts": null
+        },
+        {
+          "index": 1,
+          "message": {
+            "role": "assistant",
+            "content": "**Le chat dort sur le canapé chaud.**<turn|>\n<turn|>\n<|channel>thought\n<channel|>Alternatively, depending on the context, you could also say:\n\n**Le chat dort sur le sofa chaud.**",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 78,
+        "completion_tokens": 53,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

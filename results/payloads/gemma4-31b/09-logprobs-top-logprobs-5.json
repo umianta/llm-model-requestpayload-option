@@ -1,0 +1,195 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ],
+      "max_tokens": 10,
+      "temperature": 0,
+      "logprobs": true,
+      "top_logprobs": 5
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 303,
+    "ttft_ms": 293,
+    "body": {
+      "id": "chatcmpl-9b9552d7ee9a226f",
+      "object": "chat.completion",
+      "created": 1794800612,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Paris",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": {
+            "content": [
+              {
+                "token": "Paris",
+                "logprob": -0.00003266281055402942,
+                "bytes": [
+                  80,
+                  97,
+                  114,
+                  105,
+                  115
+                ],
+                "top_logprobs": [
+                  {
+                    "token": "Paris",
+                    "logprob": -0.00003266281055402942,
+                    "bytes": [
+                      80,
+                      97,
+                      114,
+                      105,
+                      115
+                    ]
+                  },
+                  {
+                    "token": " Paris",
+                    "logprob": -11.187532424926758,
+                    "bytes": [
+                      32,
+                      80,
+                      97,
+                      114,
+                      105,
+                      115
+                    ]
+                  },
+                  {
+                    "token": "**",
+                    "logprob": -11.437532424926758,
+                    "bytes": [
+                      42,
+                      42
+                    ]
+                  },
+                  {
+                    "token": "The",
+                    "logprob": -12.000032424926758,
+                    "bytes": [
+                      84,
+                      104,
+                      101
+                    ]
+                  },
+                  {
+                    "token": "the",
+                    "logprob": -13.312532424926758,
+                    "bytes": [
+                      116,
+                      104,
+                      101
+                    ]
+                  }
+                ]
+              },
+              {
+                "token": "<turn|>",
+                "logprob": -0.0789126604795456,
+                "bytes": [
+                  60,
+                  116,
+                  117,
+                  114,
+                  110,
+                  124,
+                  62
+                ],
+                "top_logprobs": [
+                  {
+                    "token": "<turn|>",
+                    "logprob": -0.0789126604795456,
+                    "bytes": [
+                      60,
+                      116,
+                      117,
+                      114,
+                      110,
+                      124,
+                      62
+                    ]
+                  },
+                  {
+                    "token": ".",
+                    "logprob": -2.5789127349853516,
+                    "bytes": [
+                      46
+                    ]
+                  },
+                  {
+                    "token": "of",
+                    "logprob": -13.141412734985352,
+                    "bytes": [
+                      111,
+                      102
+                    ]
+                  },
+                  {
+                    "token": "**.",
+                    "logprob": -13.235162734985352,
+                    "bytes": [
+                      42,
+                      42,
+                      46
+                    ]
+                  },
+                  {
+                    "token": " ostrich",
+                    "logprob": -13.547662734985352,
+                    "bytes": [
+                      32,
+                      111,
+                      115,
+                      116,
+                      114,
+                      105,
+                      99,
+                      104
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 18,
+        "total_tokens": 20,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

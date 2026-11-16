@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "{{target}}/metrics"
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 7,
+    "ttft_ms": null,
+    "body": [
+      "vllm:num_requests_running{engine=\"0\",model_name=\"gemma-4-31b\"} 0.0",
+      "vllm:num_requests_waiting{engine=\"0\",model_name=\"gemma-4-31b\"} 0.0",
+      "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"gemma-4-31b\",reason=\"capacity\"} 0.0",
+      "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"gemma-4-31b\",reason=\"deferred\"} 0.0",
+      "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"gemma-4-31b\"} 24369.0",
+      "vllm:prefix_cache_queries_created{engine=\"0\",model_name=\"gemma-4-31b\"} 1.794704219728561e+09",
+      "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"gemma-4-31b\"} 9792.0",
+      "vllm:prefix_cache_hits_created{engine=\"0\",model_name=\"gemma-4-31b\"} 1.794704219728574e+09",
+      "vllm:prompt_tokens_total{engine=\"0\",model_name=\"gemma-4-31b\"} 24461.0",
+      "vllm:generation_tokens_total{engine=\"0\",model_name=\"gemma-4-31b\"} 10020.0"
+    ]
+  }
+}

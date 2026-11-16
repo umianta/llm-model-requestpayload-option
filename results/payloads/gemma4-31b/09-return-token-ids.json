@@ -1,0 +1,85 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ],
+      "max_tokens": 10,
+      "temperature": 0,
+      "return_token_ids": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 300,
+    "ttft_ms": 291,
+    "body": {
+      "id": "chatcmpl-8901aa1a6e25e152",
+      "object": "chat.completion",
+      "created": 1794800613,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Paris",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": [
+            50429,
+            106
+          ],
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 18,
+        "total_tokens": 20,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": [
+        2,
+        105,
+        2364,
+        107,
+        818,
+        5279,
+        529,
+        7001,
+        563,
+        106,
+        107,
+        105,
+        4368,
+        107,
+        100,
+        45518,
+        107,
+        101
+      ],
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write three lines of a poem."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0,
+      "stop_token_ids": [
+        107
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 1458,
+    "ttft_ms": 434,
+    "body": {
+      "id": "chatcmpl-b210d93219113202",
+      "object": "chat.completion",
+      "created": 1794800314,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The golden sun sinks low beneath the hill,",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 107,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 30,
+        "completion_tokens": 10,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

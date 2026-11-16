@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "temperature": 0,
+      "max_tokens": 200,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "https://vllm-public-assets.s3.us-west-2.amazonaws.com/vision_model_images/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Describe this scene in detail, including any small objects far away."
+            }
+          ]
+        }
+      ],
+      "mm_processor_kwargs": {
+        "max_soft_tokens": 70
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 29939,
+    "ttft_ms": 604,
+    "body": {
+      "id": "chatcmpl-b404e81637e28022",
+      "object": "chat.completion",
+      "created": 1794800654,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "A wide-angle, eye-level shot captures a long wooden boardwalk stretching straight toward the horizon through a lush, green marshland under a vast, dynamic sky.\n\n**The Foreground and Midground:**\nThe boardwalk is the central focal point, composed of weathered, light-grey wooden planks laid horizontally. It leads the viewer's eye from the bottom center of the frame deep into the distance. On either side of the path, dense, vibrant green grasses and reeds grow tall, some reaching halfway up the boardwalk's edge. The grass is a mix of bright lime and deep emerald greens, suggesting a moist, fertile environment.\n\n**The Background:**\nAs the boardwalk recedes, it eventually disappears into a line of low-lying vegetation and shrubs. In the far distance, a thin line of dark green trees and shrubs marks the horizon. To the right, there is a denser cluster of reddish-brown and golden-hued brush, indicating a change in plant species or the",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 88,
+        "total_tokens": 288,
+        "completion_tokens": 200,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is Lyon"
+        }
+      ],
+      "max_tokens": 1,
+      "temperature": 0,
+      "prompt_logprobs": 1
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 306,
+    "ttft_ms": null,
+    "body": {
+      "id": "chatcmpl-9202c45987f7532f",
+      "object": "chat.completion",
+      "created": 1794800612,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Actually",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 19,
+        "total_tokens": 20,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": [
+        null,
+        {
+          "105": {
+            "logprob": -21.563247680664062,
+            "rank": 52958,
+            "decoded_token": "<|turn>"
+          },
+          "236773": {
+            "logprob": -1.938247561454773,
+            "rank": 1,
+            "decoded_token": "S"
+          }
+        },
+        {
+          "2364": {
+            "logprob": -18.92852210998535,
+            "rank": 28779,
+            "decoded_token": "user"
+          },
+          "236773": {
+            "logprob": -1.7410213947296143,
+            "rank": 1,
+            "decoded_token": "S"
+          }
+        },
+        {
+          "107": {
+            "logprob": -18.776277542114258,
+            "rank": 11264,
+            "decoded_token": "\n"
+          },
+          "236773": {
+            "logprob": -1.7137774229049683,
+            "rank": 1,
+            "decoded_token": "S"
+          }
+        },
+        {
+          "818": {
+            "logprob": -16.538755416870117,
+            "rank": 43235,
+            "decoded_token": "The"
+          },
+          "236798": {
+            "logprob": -1.601256012916565,
+            "rank": 1,
+            "decoded_token": "L"
+          }
+        },
+        {
+          "5279": {
+            "logprob": -38.756126403808594,
+            "rank": 226490,
+            "decoded_token": " capital"
+          },
+          "236749": {
+            "logprob": -0.13112622499465942,
+            "rank": 1,
+            "decoded_token": "n"
+          }
+        },
+        {
+          "529": {
+            "logprob": -21.223388671875,
+            "rank": 67186,
+            "decoded_token": " of"
+          },
+          "236749": {
+            "logprob": -0.05151312053203583,
+            "rank": 1,
+            "decoded_token": "n"
+          }
+        },
+        {
+          "912": {
+            "logprob": -1.2517038583755493,
+            "rank": 1,
+            "decoded_token": " part"
+          },
+          "7001": {
+            "logprob": -12.814204216003418,
+            "rank": 6970,
+            "decoded_token": " France"
+          }
+        },
+        {
+          "563": {
+            "logprob": -8.983133316040039,
+            "rank": 127,
+            "decoded_token": " is"
+          },
+          "1852": {
+            "logprob": -0.42063307762145996,
+            "rank": 1,
+            "decoded_token": " own"
+          }
+        },
+        {
+          "506": {
+            "logprob": -0.6411080360412598,
+            "rank": 1,
+            "decoded_token": " the"
+          },
+          "49533": {
+            "logprob": -16.0590763092041,
+            "rank": 30633,
+            "decoded_token": " Lyon"
+          }
+        },
+        {
+          "106": {
+            "logprob": -29.866201400756836,
+            "rank": 173946,
+            "decoded_token": "<turn|>"
+          },
+          "1852": {
+            "logprob": -0.05370127037167549,
+            "rank": 1,
+            "decoded_token": " own"
+          }
+        },
+        {
+          "100": {
+            "logprob": -0.12738144397735596,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          },
+          "107": {
+            "logprob": -2.1273813247680664,
+            "rank": 2,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "100": {
+            "logprob": -0.00006735097849741578,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          },
+          "105": {
+            "logprob": -26.40631675720215,
+            "rank": 62983,
+            "decoded_token": "<|turn>"
+          }
+        },
+        {
+          "100": {
+            "logprob": -0.013889324851334095,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          },
+          "4368": {
+            "logprob": -21.23263931274414,
+            "rank": 25231,
+            "decoded_token": "model"
+          }
+        },
+        {
+          "100": {
+            "logprob": -0.00016091958968900144,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          },
+          "107": {
+            "logprob": -8.750161170959473,
+            "rank": 2,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "100": {
+            "logprob": -3.576278118089249e-7,
+            "rank": 1,
+            "decoded_token": "<|channel>"
+          }
+        },
+        {
+          "45518": {
+            "logprob": -0.0000020265558760002023,
+            "rank": 1,
+            "decoded_token": "thought"
+          }
+        },
+        {
+          "107": {
+            "logprob": 0,
+            "rank": 1,
+            "decoded_token": "\n"
+          }
+        },
+        {
+          "101": {
+            "logprob": -0.000004410734163684538,
+            "rank": 1,
+            "decoded_token": "<channel|>"
+          }
+        }
+      ],
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

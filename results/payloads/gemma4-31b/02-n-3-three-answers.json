@@ -1,0 +1,97 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Suggest a name for a coffee shop."
+        }
+      ],
+      "max_tokens": 40,
+      "temperature": 0.9,
+      "n": 3
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 5804,
+    "ttft_ms": null,
+    "body": {
+      "id": "chatcmpl-8aa0ddd47c42439b",
+      "object": "chat.completion",
+      "created": 1794800266,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Depending on the \"vibe\" you want for your shop, here are several suggestions broken down by category:\n\n### 1. Cozy & Classic\n*These names suggest a warm environment, comfortable",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        },
+        {
+          "index": 1,
+          "message": {
+            "role": "assistant",
+            "content": "Depending on the \"vibe\" you are going for, here are several suggestions categorized by the atmosphere of the shop:\n\n### 1. Modern & Minimalist\n*These are great for shops",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        },
+        {
+          "index": 2,
+          "message": {
+            "role": "assistant",
+            "content": "Depending on the \"vibe\" you want for your shop, here are several suggestions broken down by category:\n\n### 1. Cozy & Warm (The \"Neighborhood Spot\")\n*These names",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 21,
+        "total_tokens": 141,
+        "completion_tokens": 120,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

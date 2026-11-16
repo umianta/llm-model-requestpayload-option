@@ -1,0 +1,107 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Email: \"Hi, I am Priya Shah. My order #4471 arrived broken on 3 Nov 2026. The screen is cracked. Please call me at 555-0142.\"\nReturn JSON with exactly these fields: name, order_id (the number after #, as an integer), date, problem, phone, email. Use null for any field that is not in the text."
+        }
+      ],
+      "max_tokens": 300,
+      "temperature": 0,
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "complaint",
+          "strict": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "order_id": {
+                "type": "integer"
+              },
+              "date": {
+                "type": "string"
+              },
+              "problem": {
+                "type": "string"
+              },
+              "phone": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "email": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "order_id",
+              "date",
+              "problem",
+              "phone",
+              "email"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 8548,
+    "ttft_ms": 174,
+    "body": {
+      "id": "chatcmpl-b924ebdbd725046d",
+      "object": "chat.completion",
+      "created": 1794800441,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"name\": \"Priya Shah\", \"order_id\": 4471, \"date\": \"3 Nov 2026\", \"problem\": \"The screen is cracked\", \"phone\": \"555-0142\", \"email\": null}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 104,
+        "total_tokens": 163,
+        "completion_tokens": 59,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

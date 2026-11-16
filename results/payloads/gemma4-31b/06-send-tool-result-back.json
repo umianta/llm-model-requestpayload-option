@@ -1,0 +1,67 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "temperature": 0,
+      "messages": [
+        {
+          "role": "user",
+          "content": "What's the weather in Paris right now?"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_1",
+              "type": "function",
+              "function": {
+                "name": "get_weather",
+                "arguments": "{\"city\":\"Paris\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "call_1",
+          "content": "{\"temp_c\": 14, \"sky\": \"light rain\"}"
+        }
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 400,
+    "time_ms": 1,
+    "ttft_ms": null,
+    "body": {
+      "error": {
+        "message": "\"auto\" tool choice requires --enable-auto-tool-choice and --tool-call-parser to be set",
+        "type": "BadRequestError",
+        "param": null,
+        "code": 400
+      }
+    }
+  }
+}

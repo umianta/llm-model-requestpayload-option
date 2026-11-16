@@ -1,0 +1,42 @@
+INVOICE                                                                      Invoice no. INV-2026-0419
+                                                                                     Date: 03 Nov 2026
+Northwind Lab Supplies Ltd. · 12 Harbour Road, Bristol BS1 4XY                        Due: 03 Dec 2026
+
+
+
+Bill to
+Priya Shah                                                                                  PO number
+Acme Robotics GmbH                                                                           PO-77812
+Torstraße 88, 10119 Berlin
+
+
+
+    #   Description                                              Qty    Unit price             Amount
+
+
+1       GPU cooling plate, copper                                  4       € 89.00             € 356.00
+
+
+2       Thermal paste, 10 g                                      10         € 7.50              € 75.00
+
+
+3       PCIe riser cable, 30 cm                                    2       € 24.90              € 49.80
+
+
+4       Rack shelf, 1U (discontinued)                              1       € 61.20              € 61.20
+
+
+                                                                          Subtotal             € 542.00
+
+
+                                                                         VAT 19%               € 102.98
+
+
+                                                                         Total due             € 644.98
+
+
+
+
+Payment: IBAN DE89 3704 0044 0532 0130 00 · Ref INV-2026-0419. Late payments incur 1.5% per month.
+Fictional sample document for testing.
+

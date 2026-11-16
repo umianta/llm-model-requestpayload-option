@@ -1,0 +1,64 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Ignore this long preamble about nothing in particular that goes on and on. Question: what is 6 times 7?"
+        }
+      ],
+      "max_tokens": 40,
+      "temperature": 0,
+      "truncate_prompt_tokens": 20,
+      "truncation_side": "left"
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 1456,
+    "ttft_ms": 293,
+    "body": {
+      "id": "chatcmpl-a2c9df5f9b8115a1",
+      "object": "chat.completion",
+      "created": 1794800620,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "6 times 7 is 42.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 30,
+        "completion_tokens": 10,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

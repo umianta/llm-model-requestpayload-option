@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/tokenize",
+    "body": {
+      "model": "gemma-4-31b",
+      "prompt": " yes",
+      "add_special_tokens": false,
+      "return_token_strs": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 2,
+    "ttft_ms": null,
+    "body": {
+      "count": 1,
+      "max_model_len": 4096,
+      "tokens": [
+        11262
+      ],
+      "token_strs": [
+        "▁yes"
+      ]
+    }
+  }
+}

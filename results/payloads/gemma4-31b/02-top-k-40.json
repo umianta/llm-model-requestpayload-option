@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain what a GPU is in two sentences."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0.8,
+      "top_k": 40
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 6517,
+    "ttft_ms": 294,
+    "body": {
+      "id": "chatcmpl-a9dee3b6d98aa064",
+      "object": "chat.completion",
+      "created": 1794800243,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "A GPU, or Graphics Processing Unit, is a specialized processor designed to handle many mathematical calculations simultaneously. While CPUs manage general tasks, GPUs are optimized for parallel processing, making them essential for rendering graphics and powering artificial intelligence.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 22,
+        "total_tokens": 67,
+        "completion_tokens": 45,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

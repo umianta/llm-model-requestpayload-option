@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain what a GPU is in two sentences."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0,
+      "stream": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 8667,
+    "ttft_ms": null,
+    "body": [
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}",
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"A\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" GPU\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\",\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "... 46 more events ...",
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\".\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "data: {\"id\":\"chatcmpl-81f7139949f523e1\",\"object\":\"chat.completion.chunk\",\"created\":1794801093,\"model\":\"gemma-4-31b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":106,\"token_ids\":null}],\"system_fingerprint\":\"vllm-0.28.0-b98077e4\"}",
+      "data: [DONE]"
+    ]
+  }
+}

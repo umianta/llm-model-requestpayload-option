@@ -1,0 +1,64 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is 391 prime?"
+        }
+      ],
+      "max_tokens": 128,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 19115,
+    "ttft_ms": 293,
+    "body": {
+      "id": "chatcmpl-90080a34eecdaadf",
+      "object": "chat.completion",
+      "created": 1794800577,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No, **391 is not a prime number**.\n\nTo determine if 391 is prime, you can test for divisibility by prime numbers up to the square root of 391 (which is approximately 19.77).\n\n*   It is not divisible by 2 (it's odd).\n*   It is not divisible by 3 (the sum of the digits $3+9+1=13$, which is not divisible by 3).\n*   It is not divisible by 5 (it doesn't end in 0 or 5).\n*",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 148,
+        "completion_tokens": 128,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

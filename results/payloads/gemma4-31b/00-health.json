@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "{{target}}/health"
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 5,
+    "ttft_ms": null,
+    "body": ""
+  }
+}

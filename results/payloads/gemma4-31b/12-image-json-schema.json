@@ -1,0 +1,101 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "temperature": 0,
+      "max_tokens": 200,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "https://vllm-public-assets.s3.us-west-2.amazonaws.com/vision_model_images/stop_sign.jpg"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Extract what you see."
+            }
+          ]
+        }
+      ],
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "scene",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "sign_text": {
+                "type": "string"
+              },
+              "sign_shape": {
+                "type": "string"
+              },
+              "other_objects": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "sign_text",
+              "sign_shape",
+              "other_objects"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 8075,
+    "ttft_ms": 794,
+    "body": {
+      "id": "chatcmpl-b64da1be11cd0a7f",
+      "object": "chat.completion",
+      "created": 1794800718,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"sign_text\": \"STOP\", \"sign_shape\": \"octagon\", \"other_objects\": [\"black car\", \"red gate\", \"white lion statues\", \"optus sign\", \"yes sign\", \"green trash bin\", \"bollards\"]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 280,
+        "total_tokens": 334,
+        "completion_tokens": 54,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

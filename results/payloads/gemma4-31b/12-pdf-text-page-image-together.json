@@ -1,0 +1,147 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "temperature": 0,
+      "max_tokens": 400,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "data:image/jpeg;base64,<72 KB base64 omitted>"
+              }
+            },
+            {
+              "type": "text",
+              "text": "Text layer of the same page:\n\"\"\"\nINVOICE                                                                      Invoice no. INV-2026-0419\n                                                                                     Date: 03 Nov 2026\nNorthwind Lab Supplies Ltd. · 12 Harbour Road, Bristol BS1 4XY                        Due: 03 Dec 2026\n\n\n\nBill to\nPriya Shah                                                                                  PO number\nAcme Robotics GmbH                                                                           PO-77812\nTorstraße 88, 10119 Berlin\n\n\n\n    #   Description                                              Qty    Unit price             Amount\n\n\n1       GPU cooling plate, copper                                  4       € 89.00             € 356.00\n\n\n2       Thermal paste, 10 g                                      10         € 7.50              € 75.00\n\n\n3       PCIe riser cable, 30 cm                                    2       € 24.90              € 49.80\n\n\n4       Rack shelf, 1U (discontinued)                              1       € 61.20              € 61.20\n\n\n                                                                          Subtotal             € 542.00\n\n\n                                                                         VAT 19%               € 102.98\n\n\n                                                                         Total due             € 644.98\n\n\n\n\nPayment: IBAN DE89 3704 0044 0532 0130 00 · Ref INV-2026-0419. Late payments incur 1.5% per month.\nFictional sample document for testing.\n\"\"\"\n\nExtract the invoice as JSON with: invoice_number, invoice_date, customer_name, po_number, line_items (description, qty, unit_price, amount), subtotal, vat, total. Amounts as plain numbers without currency symbols. Use null if a field is missing."
+            }
+          ]
+        }
+      ],
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "invoice",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "invoice_number": {
+                "type": "string"
+              },
+              "invoice_date": {
+                "type": "string"
+              },
+              "customer_name": {
+                "type": "string"
+              },
+              "po_number": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "line_items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "qty": {
+                      "type": "number"
+                    },
+                    "unit_price": {
+                      "type": "number"
+                    },
+                    "amount": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "qty",
+                    "unit_price",
+                    "amount"
+                  ]
+                }
+              },
+              "subtotal": {
+                "type": "number"
+              },
+              "vat": {
+                "type": "number"
+              },
+              "total": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "invoice_number",
+              "invoice_date",
+              "customer_name",
+              "po_number",
+              "line_items",
+              "subtotal",
+              "vat",
+              "total"
+            ]
+          }
+        }
+      },
+      "mm_processor_kwargs": {
+        "max_soft_tokens": 560
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 39364,
+    "ttft_ms": 24283,
+    "body": {
+      "id": "chatcmpl-b93433a105ffc3d0",
+      "object": "chat.completion",
+      "created": 1794800959,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"invoice_number\": \"INV-2026-0419\", \"invoice_date\": \"03 Nov 2026\", \"customer_name\": \"Priya Shah\", \"po_number\": \"PO-77812\", \"line_items\": [{\"description\": \"GPU cooling plate, copper\", \"qty\": 4, \"unit_price\": 89.00, \"amount\": 356.00}, {\"description\": \"Thermal paste, 10 g\", \"qty\": 10, \"unit_price\": 7.50, \"amount\": 75.00}, {\"description\": \"PCIe riser cable, 30 cm\", \"qty\": 2, \"unit_price\": 24.90, \"amount\": 49.80}, {\"description\": \"Rack shelf, 1U (discontinued)\", \"qty\": 1, \"unit_price\": 61.20, \"amount\": 61.20}], \"subtotal\": 542.00, \"vat\": 102.98, \"total\": 644.98}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 973,
+        "total_tokens": 1233,
+        "completion_tokens": 260,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

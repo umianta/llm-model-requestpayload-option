@@ -1,0 +1,93 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ],
+      "max_tokens": 10,
+      "temperature": 0,
+      "logprobs": true,
+      "return_tokens_as_token_ids": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 306,
+    "ttft_ms": 156,
+    "body": {
+      "id": "chatcmpl-93c44aaa2e410bb5",
+      "object": "chat.completion",
+      "created": 1794800612,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Paris",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": {
+            "content": [
+              {
+                "token": "token_id:50429",
+                "logprob": -0.00003266281055402942,
+                "bytes": [
+                  80,
+                  97,
+                  114,
+                  105,
+                  115
+                ],
+                "top_logprobs": []
+              },
+              {
+                "token": "token_id:106",
+                "logprob": -0.0789126604795456,
+                "bytes": [
+                  60,
+                  116,
+                  117,
+                  114,
+                  110,
+                  124,
+                  62
+                ],
+                "top_logprobs": []
+              }
+            ]
+          },
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 18,
+        "total_tokens": 20,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+# stray folder created by a local hook with an unexpanded ${HOME}
+/${HOME}/

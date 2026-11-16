@@ -1,0 +1,84 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Give me 3 fruits and their colours."
+        }
+      ],
+      "max_tokens": 200,
+      "temperature": 0,
+      "structured_outputs": {
+        "json": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fruit": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "fruit",
+              "colour"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 5790,
+    "ttft_ms": 292,
+    "body": {
+      "id": "chatcmpl-bc6df9a9a5da4803",
+      "object": "chat.completion",
+      "created": 1794800450,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "[{\"fruit\": \"Apple\", \"colour\": \"Red\"}, {\"fruit\": \"Banana\", \"colour\": \"Yellow\"}, {\"fruit\": \"Blueberry\", \"colour\": \"Blue\"}]",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 22,
+        "total_tokens": 62,
+        "completion_tokens": 40,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

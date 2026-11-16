@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a paragraph about the sea."
+        }
+      ],
+      "max_tokens": 128,
+      "temperature": 0.7,
+      "presence_penalty": 1
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 18527,
+    "ttft_ms": 157,
+    "body": {
+      "id": "chatcmpl-9f9f07399267471a",
+      "object": "chat.completion",
+      "created": 1794800344,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The sea is a vast, shimmering expanse of mystery and power, stretching toward the horizon in an endless gradient of sapphire and turquoise. Its surface is a restless mirror, dancing with sunlight in a million glittering fragments while concealing a silent, alien world beneath the waves. From the rhythmic, soothing pulse of tides kissing a sandy shore to the thunderous roar of white-capped swells crashing against jagged cliffs, the ocean embodies a duality of serenity and chaos. It is the lifeblood of the planet, a cradle of ancient secrets and iridescent creatures, breathing a salty mist into the air that speaks of distant lands and the timeless pull of the deep.",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 148,
+        "completion_tokens": 128,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

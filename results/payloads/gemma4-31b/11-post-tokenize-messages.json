@@ -1,0 +1,65 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/tokenize",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hi, I am Priya"
+        }
+      ],
+      "return_token_strs": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 4,
+    "ttft_ms": null,
+    "body": {
+      "count": 18,
+      "max_model_len": 4096,
+      "tokens": [
+        2,
+        105,
+        2364,
+        107,
+        10979,
+        236764,
+        564,
+        1006,
+        212546,
+        106,
+        107,
+        105,
+        4368,
+        107,
+        100,
+        45518,
+        107,
+        101
+      ],
+      "token_strs": [
+        "<bos>",
+        "<|turn>",
+        "user",
+        "\n",
+        "Hi",
+        ",",
+        "▁I",
+        "▁am",
+        "▁Priya",
+        "<turn|>",
+        "\n",
+        "<|turn>",
+        "model",
+        "\n",
+        "<|channel>",
+        "thought",
+        "\n",
+        "<channel|>"
+      ]
+    }
+  }
+}

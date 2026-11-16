@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "{{target}}/v1/chat/completions",
+    "body": {
+      "model": "gemma-4-31b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is 391 prime?"
+        }
+      ],
+      "max_tokens": 512,
+      "include_reasoning": false
+    }
+  },
+  "response": {
+    "status": 200,
+    "time_ms": 36193,
+    "ttft_ms": 156,
+    "body": {
+      "id": "chatcmpl-9fda98e29856cc79",
+      "object": "chat.completion",
+      "created": 1794800541,
+      "model": "gemma-4-31b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No, **391 is not a prime number**.\n\nTo determine if 391 is prime, you can test for divisibility by prime numbers up to the square root of 391 (which is approximately 19.7).\n\n*   It is not divisible by 2 (it's odd).\n*   It is not divisible by 3 (the sum of the digits $3+9+1=13$, which is not divisible by 3).\n*   It is not divisible by 5 (it doesn't end in 0 or 5).\n*   $391 \\div 7 = 55$ remainder 6.\n*   $391 \\div 11 = 35$ remainder 6.\n*   $391 \\div 13 = 30$ remainder 1.\n*   **$391 \\div 17 = 23$**\n\nBecause it can be divided evenly by 17 and 23, it is a composite number.\n\n**The factorization of 391 is: $17 \\times 23$**",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 106,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.28.0-b98077e4",
+      "usage": {
+        "prompt_tokens": 20,
+        "total_tokens": 270,
+        "completion_tokens": 250,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  }
+}

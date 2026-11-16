@@ -9,7 +9,7 @@ server-specific extras, such as vLLM's `structured_outputs` or `/tokenize`, say 
 
 There are 14 lessons, from your first request to images, video, PDFs and hosted APIs (OpenAI, Google). Each lesson has a folder of ready-made
 requests in the Postman collection and a short page in [`lessons/`](lessons/) that explains what to look for.
-[`results/`](results/) has the real outputs and timings from a reference server (Gemma-4-31B on an NVIDIA GB10),
+[`results/`](results/) has the real outputs and timings from a reference server,
 so you can compare them with your own. Every lesson shows a real request and response, with the key fields explained.
 
 ## Who this is for

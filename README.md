@@ -1,7 +1,11 @@
 # LLM request payload options: a hands-on Postman tutorial
 
-Learn every field you can send to a vLLM server: what it does, when to use it, and what it costs. You learn by
-sending real requests and comparing the answers.
+Learn every field you can send to an LLM model through an OpenAI-compatible API: what it does, when to use it, and
+what it costs. You learn by sending real requests and comparing the answers.
+
+It works with any server that speaks the OpenAI Chat Completions API: a self-hosted model (vLLM, SGLang, Ollama and
+others) or a hosted one (OpenAI, Google Vertex AI, Gemini API). The standard fields work everywhere; lessons that use
+server-specific extras, such as vLLM's `structured_outputs` or `/tokenize`, say so.
 
 There are 14 lessons, from your first request to images, video, PDFs and hosted APIs (OpenAI, Google). Each lesson has a folder of ready-made
 requests in the Postman collection and a short page in [`lessons/`](lessons/) that explains what to look for.
@@ -31,7 +35,8 @@ lesson 0 explains it from scratch.
 
 ## Quick start
 
-**1. Have a vLLM server running** (any chat model works; the examples were made with Gemma-4-31B):
+**1. Have an LLM endpoint.** Either a hosted API (skip to step 2 and see [lesson 13](lessons/13-hosted-apis.md) for
+keys), or a model you run yourself. The reference results were made with Gemma-4-31B on vLLM:
 
 ```bash
 vllm serve RedHatAI/gemma-4-31B-it-FP8-dynamic --served-model-name gemma-4-31b --max-model-len 4096
@@ -90,5 +95,6 @@ Edits made inside Postman are lost when the collection is regenerated, so put la
 
 ## Version notes
 
-Field names were checked against the vLLM source and tested on **vLLM 0.28**. Older or newer versions may add,
+The standard fields follow the OpenAI Chat Completions API. The server-specific extras were checked against the
+vLLM source and tested on **vLLM 0.28**. Older or newer versions may add,
 rename or reject a field. The server answers with HTTP 400 and a message that names the problem.

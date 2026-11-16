@@ -25,7 +25,7 @@ lesson 0 explains it from scratch.
 ├── lessons/                     one page per lesson (read alongside the collection)
 ├── postman/
 │   ├── llm-model-requestpayload-options.postman_collection.json   85 requests in 14 folders
-│   └── environments/            presets: local vLLM, Gemma-4-31B reference server, OpenAI, Vertex AI, Gemini API
+│   └── environments/            presets: local server, reference server, OpenAI, Vertex AI, Gemini API
 ├── samples/                     sample invoice used in the PDF lesson (HTML source, PDF, text, page image)
 ├── scripts/
 │   ├── build-collection.ts      source of truth: generates the collection JSON
@@ -36,11 +36,13 @@ lesson 0 explains it from scratch.
 ## Quick start
 
 **1. Have an LLM endpoint.** Either a hosted API (skip to step 2 and see [lesson 13](lessons/13-hosted-apis.md) for
-keys), or a model you run yourself. The reference results were made with Gemma-4-31B on vLLM:
+keys), or a model you run yourself, for example with vLLM:
 
 ```bash
-vllm serve RedHatAI/gemma-4-31B-it-FP8-dynamic --served-model-name gemma-4-31b --max-model-len 4096
+vllm serve <huggingface-model-id> --served-model-name my-model --max-model-len 4096
 ```
+
+Then set the Postman variable `model` to the served name (`my-model` here).
 
 A few lessons need extra server flags. See [lesson 0](lessons/00-setup.md#server-flags).
 
